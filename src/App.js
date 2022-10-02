@@ -1,8 +1,9 @@
 import apiClient from "./Services/apiClient";
-
 import { MdLocalFireDepartment } from "react-icons/md";
 import React, { createContext, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Users from "./Components/Users";
@@ -54,7 +55,7 @@ const App = () => {
     <Provider store={store}>
       <LoadingProvider>
         <ContextProveder>
-          {/* <Context.Provider value={{ balls, setBalls }}> */}
+
           <Nav />
           <Search />
           <Loading />
@@ -87,7 +88,6 @@ const App = () => {
         <ListTodo />
         <Footer />
       </LoadingProvider></Provider>
-      {/* </Context.Provider> */}
     </BrowserRouter>
   );
 };

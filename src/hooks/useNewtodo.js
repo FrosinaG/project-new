@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, useContext } from "react";
 import axios from "axios";
 
 import { LoadingContext } from "../Components/LoadingContext";
-// import {setLoading} from "../Components/LoadingContext";
+
 
 const useNewtodo = (url) => {
   const [todo, setTodo] = useState();

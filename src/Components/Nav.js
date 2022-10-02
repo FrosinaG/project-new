@@ -2,9 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import img from "../img/icons2.png"
 import {ImHome3} from "react-icons/im";
-// import {FaFacebook} from "react-icons/fa";
-// import {AiOutlineTwitter} from "react-icons/ai";
-// import {AiFillLinkedin} from "react-icons/ai";
+
 
 const Nav = () => {
   return (

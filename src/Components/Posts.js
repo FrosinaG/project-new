@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-
+import ImgPost from "./ImgPost";
 
 const Posts = () => {
   const [postlist, setPosts] = useState();
@@ -31,7 +31,7 @@ const Posts = () => {
           </div>
         );
       })}
-    
+      <ImgPost />
     </div>
   );
 };

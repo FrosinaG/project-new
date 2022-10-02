@@ -2,21 +2,32 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "../hooks/useContextuser";
+import useUsers from "../hooks/useUsers";
+import User from "./User";
 
 const Search = () => {
-  const [searchlist, setSearchlist] = useState("");
+  const [userList, setUserlist] = useState();
+  const [foundUser, setFoundUser] = useState();
   const url = "https://dummyjson.com/users";
-  const { data } = userData(url);
-  console.log(searchlist);
+  const { data } = useUsers(url);
 
-  // const searchuser = (users) => {
-  //   return users.filter(
-  //     (item) =>
-  //       item.firstName.toLowerCase().includes(searchlist) ||
-  //       item.lastName.toLowerCase().includes(searchlist) ||
-  //       item.email.toLowerCase().includes(searchlist)
-  //   );
-  // };
+  useEffect(() => {
+    if (data) setUserlist(data);
+  }, [data]);
+
+  const searchUser = (value) => {
+    if (!value) {
+      setFoundUser(null)
+      return
+    }
+    const user = userList.find(
+      (item) =>
+        item.firstName.toLowerCase().includes(value) ||
+        item.lastName.toLowerCase().includes(value) ||
+        item.email.toLowerCase().includes(value)
+    );
+    setFoundUser(user)
+  };
 
   return (
     <>
@@ -26,11 +37,13 @@ const Search = () => {
           type="text"
           className="search-in"
           placeholder="Search...."
-          onChange={(e) => setSearchlist(e.target.value)}
+          onChange={(e) => searchUser(e.target.value)}
         />
       </div>
-      <div className="user-search1">
-        {/* <Users users={users} className="user-search" />{" "} */}
+      <div>
+        {
+          foundUser ? <User user={foundUser} /> : null            
+        }
       </div>
     </>
   );

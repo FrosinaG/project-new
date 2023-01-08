@@ -12,7 +12,7 @@ const Redux = () => {
   return (
     <>
       <h1>{store.value}</h1>
-      <Link to={"/redux"}>Redux</Link>
+      <Link to={"/redux"}>Click me</Link>
     
     </>
   );

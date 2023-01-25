@@ -52,42 +52,44 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Provider store={store}>
-      <LoadingProvider>
-        <ContextProveder>
-
-          <Nav />
-          <Search />
-          <Loading />
-          <Routes>
-            <Route element={<PrivateRoute />}>
+      <Provider store={store}>
+        <LoadingProvider>
+          <ContextProveder>
+            <Nav />
+            <Search />
+            <Loading />
+            <Routes>
+              <Route element={<PrivateRoute />}>
+                <Route path="productlink/:id" element={<Productlink />} />
+              </Route>
               <Route path="/" element={<Hero />} />
               <Route path="users" element={<Users />} />
               <Route path="userlink/:id" element={<Userlink />} />
               <Route path="product" element={<Products />} />
-              <Route path="productlink/:id" element={<Productlink />} />
+
               <Route path="card" element={<Cart />} />
               <Route path="cardlink/:id" element={<Cardlink />} />
               <Route path="posts" element={<Posts />} />
               <Route path="postslink/:id" element={<Postslink />} />
               <Route path="listtodo" element={<ListTodo />} />
               <Route path="newtodo" element={<Newtodo />} />
-              <Route path="asy" element={<Async/>} />
-              <Route path="redux" element={<Redux/>} />
-              <Route path="redux1" element={<Redux1/>} />
-              <Route path="pag"element={<Pagination/>}/>
-              <Route path="usepag"element={<UserPagination/>}/>
-            </Route>
-            <Route path="login" element={<Login />} />
-            <Route path="*" element={<Notfound />} />
-            <Route path="contextt" element={<ContextT />} />
-            <Route path="context1" element={<Context1 />} />
-          </Routes>
-        </ContextProveder>
+              <Route path="asy" element={<Async />} />
+              <Route path="redux" element={<Redux />} />
+              <Route path="redux1" element={<Redux1 />} />
+              <Route path="pag" element={<Pagination />} />
+              <Route path="usepag" element={<UserPagination />} />
 
-        <ListTodo />
-        <Footer />
-      </LoadingProvider></Provider>
+              <Route path="login" element={<Login />} />
+              <Route path="*" element={<Notfound />} />
+              <Route path="contextt" element={<ContextT />} />
+              <Route path="context1" element={<Context1 />} />
+            </Routes>
+          </ContextProveder>
+
+          <ListTodo />
+          <Footer />
+        </LoadingProvider>
+      </Provider>
     </BrowserRouter>
   );
 };

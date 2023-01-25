@@ -35,7 +35,7 @@ const Redux = () => {
       <button onClick={decrement}className="redux-button">MINUS</button>   <br/>
       <button onClick={reset}className="redux-button">RESET</button>   <br/>
       <button onClick={multiple}className="redux-button">MULTIPLE</button>   <br/>
-      <Link to={"/redux1"}>Redux1</Link></div>
+      <Link to={"/redux1"}>Click me !</Link></div>
     </>
   );
 };
